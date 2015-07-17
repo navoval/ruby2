@@ -22,10 +22,6 @@ class TasksController < ApplicationController
 
   def all_tasks
     @tasks = Task.all.order('created_at DESC')
-    # respond_to do |format|
-    #   format.json { render json: @task.to_json }
-    #   format.html
-    # end
   end
 
   private
