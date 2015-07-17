@@ -10,18 +10,18 @@
 //});
 //
 //(function($) {
-//
+//    console.log('Print');
 //    $.fn.modal_success = function(){
 //        // close modal
 //        this.modal('hide');
-//
+
 //        // clear form input elements
-//        this.find('form input[type="text"]').val('');
+//        this.find('myForm input[type="text"]').val('');
 //
 //        // clear error state
 //        this.clear_previous_errors();
 //    };
-//
+
 //    $.fn.render_form_errors = function(errors){
 //
 //        $form = this;
@@ -42,7 +42,7 @@
 //            $(this).removeClass('has-error');
 //        });
 //    }
-//
+
 //}(jQuery));
 
 //$("#myForm").submit(function(){
