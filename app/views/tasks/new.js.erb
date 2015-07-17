@@ -1,0 +1,8 @@
+// ERB template that generates Javascript instead of the HTM
+// render the html in the form partial
+m = $('#modal');
+m.html('<%= j (render partial: 'task_form', locals: {task: @task}) %>');
+m.modal('show');
+//m.modal_success();
+
+

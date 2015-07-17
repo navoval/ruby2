@@ -1,0 +1,192 @@
+<!-- Wrap all page content here -->
+<div id="wrap">
+  <header class="masthead">
+    <h1 class="text-center">Welcome to Bucket</h1>
+  </header>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Planing your trip</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!--pass the remote: true option to disable the default Rails mechanism that would have otherwise navigated us to /tasks/new.-->
+        <ul class="nav navbar-nav navbar-right">
+          <%= link_to '+ Add Trip Plan', new_task_path, class: 'btn btn-primary', remote: true %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <!-- Begin page content -->
+  <div class="divider" id="section1"></div>
+
+  <div class="container">
+    <div class="col-sm-10 col-sm-offset-1">
+      <div class="page-header text-center">
+        <h1>Since 2013</h1>
+      </div>
+      <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <hr>
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <section class="bg-1">
+    <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+  </section>
+
+  <div class="divider" id="section2"></div>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1>Profile</h1>
+
+      <hr>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+        Aliquam in felis sit amet augue.
+      </p>
+
+      <hr>
+
+      <div class="divider"></div>
+
+    </div><!--/col-->
+  </div><!--/container-->
+
+  <div class="divider"></div>
+
+  <section class="bg-3">
+    <div class="col-sm-6 col-sm-offset-3 text-center"><h2>Clients &amp; Partners</h2></div>
+  </section>
+
+  <div class="divider" id="section3"></div>
+
+  <div class="bg-4">
+    <div class="container">
+        <% if @tasks.empty? %>
+            <span class="text-warning">There are no tasks!</span>
+        <% else %>
+            <div class="row">
+                <% @tasks.each do |task| %>
+                    <div class="col-sm-4 col-xs-6">
+                        <div class="panel panel-default">
+                            <div class="panel-thumbnail">
+                                <%= image_tag(task.photo.url(:large), :class => "img-responsive") %>
+                            </div>
+                            <div class="panel-body">
+                                <p><%= task.title %></p>
+                                <p><%= task.created_at %></p>
+                            </div>
+                        </div><!--/panel-->
+                    </div><!--/col-->
+                <% end %>
+            </div><!--/row-->
+        <% end %>
+    </div><!--/container-->
+  </div>
+
+  <div class="divider" id="section4"></div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1>Location</h1>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
+      Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
+      dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
+      Aliquam in felis sit amet augue.
+    </div>
+    <hr>
+  </div><!--/row-->
+
+  <div class="divider" id="section5"></div>
+
+  <div class="row">
+    <hr>
+    <div class="col-sm-9 col-sm-offset-1">
+      <div class="row form-group">
+        <div class="col-md-12">
+          <h1>Contact Us</h1>
+        </div>
+        <div class="col-xs-4">
+          <input class="form-control" id="firstName" name="name" placeholder="Your Name" type="text">
+        </div>
+        <div class="col-xs-6">
+          <input class="form-control" id="organization" name="organization" placeholder="Company or Organization" type="text">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-5">
+          <input class="form-control" name="email" placeholder="Email" type="text">
+        </div>
+        <div class="col-xs-5">
+          <input class="form-control" name="phone" placeholder="Phone" type="text">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-10">
+          <textarea class="form-control" placeholder="Comments"></textarea>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-xs-10">
+          <button class="btn btn-default pull-right">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </div><!--/row-->
+
+  <div class="container">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <ul class="list-inline center-block">
+        <li><a href="http://facebook.com/bootply"><img src="/assets/social_icon/soc_fb.png"></a></li>
+        <li><a href="http://twitter.com/bootply"><img src="/assets/social_icon/soc_tw.png"></a></li>
+        <li><a href="http://google.com/+bootply"><img src="/assets/social_icon/soc_gplus.png"></a></li>
+        <li><a href="http://pinterest.com/in1"><img src="/assets/social_icon/soc_pin.png"></a></li>
+      </ul>
+    </div><!--/col-->
+  </div><!--/container-->
+</div><!--/wrap-->
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Copyright ©2015 Bucket Inc.</p>
+  </div>
+</div>
+<!--Accessible Rich Internet Applications (ARIA)-->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true"></div>
+
+<!-- Make a goto top botton-->
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
+
+
+
+
+
